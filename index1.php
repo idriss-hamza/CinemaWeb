@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FourCinema</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/logo.png">
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <h1><span class="text-blue">Four</span><span class="font-light">Cinema</span></h1>
+      </div>
+      <nav class="desktop-nav">
+        <a href="index.html">Movies</a>
+      </nav>
+      <div>
+      </div>
+    </header>
+
+    <main>
+      <section id="movies" class="movie-selection">
+        <h2>Now Showing</h2>
+        <div class="movie-carousel">
+
+          <div class="movie-card">
+            <div class="movie-card-poster">
+              <img src="assets/inter.jpg" alt="Interstellar">
+              <div class="movie-rating">8.7</div>
+            </div>
+            <h3>Interstellar</h3>
+            <p>Sci-Fi, Adventure</p>
+          </div>
+
+          <div class="movie-card">
+            <div class="movie-card-poster">
+              <img src="assets/sahbek.jpg" alt="Sahbek Rajel">
+              <div class="movie-rating">9.2</div>
+            </div>
+            <h3>Sahbek Rajel</h3>
+            <p>Drama, Comedy, Action</p>
+          </div>
+          
+          <div class="movie-card">
+            <div class="movie-card-poster">
+              <img src="assets/dark.jpg" alt="The Dark Knight">
+              <div class="movie-rating">9.0</div>
+            </div>
+            <h3>The Dark Knight</h3>
+            <p>Action, Crime, Drama</p>
+          </div>
+          
+          <div class="movie-card">
+            <div class="movie-card-poster">
+              <img src="assets/father.jpg" alt="The Godfather">
+              <div class="movie-rating">9.2</div>
+            </div>
+            <h3>The Godfather</h3>
+            <p>Crime, Drama</p>
+          </div>
+          
+          <div class="movie-card">
+            <div class="movie-card-poster">
+              <img src="assets/matrix.jpg" alt="The Matrix">
+              <div class="movie-rating">8.7</div>
+            </div>
+            <h3>The Matrix</h3>
+            <p>Action, Sci-Fi</p>
+          </div>
+          
+          <div class="movie-card">
+            <div class="movie-card-poster">
+              <img src="assets/oppen.jpg" alt="Oppenheimer">
+              <div class="movie-rating">8.3</div>
+            </div>
+            <h3>Oppenheimer</h3>
+            <p>Drama, History, Biography</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="movie-info">
+        <div class="movie-poster">
+          <img src="assets/inter.jpg" alt="Interstellar poster">
+        </div>
+
+        <div class="movie-details">
+          <h1>Interstellar</h1>
+          <div class="movie-meta">
+            <span class="agerating">PG-13</span>
+            <span class="movie-length">169 min</span>
+            <span class="movie-genre">Sci-Fi, Adventure, Drama</span>
+          </div>
+          <div class="rating">
+            <div class="rating-circle imdb">8.7</div>
+            <span>IMDb</span>
+          </div>
+          
+          <div class="movie-description">
+            <p>When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.</p>
+          </div>
+          <div class="movie-crew">
+            <h3>Director</h3>
+            <p>Christopher Nolan</p>
+          </div>
+          <div class="movie-cast">
+            <h3>Cast</h3>
+            <p>Matthew McConaughey, Anne Hathaway, Jessica Chastain, Bill Irwin</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="date-time-selection">
+        <h2>Select the Date and Time</h2>
+        
+        <div class="date-selector">
+          <div class="date-item">
+            <div class="date-day">Mon</div>
+            <div class="date-number">7</div>
+            <div class="date-month">April</div>
+          </div>
+          <div class="date-item">
+            <div class="date-day">Tue</div>
+            <div class="date-number">8</div>
+            <div class="date-month">April</div>
+          </div>
+          <div class="date-item">
+            <div class="date-day">Wed</div>
+            <div class="date-number">9</div>
+            <div class="date-month">April</div>
+          </div>
+          <div class="date-item">
+            <div class="date-day">Thu</div>
+            <div class="date-number">10</div>
+            <div class="date-month">April</div>
+          </div>
+          <div class="date-item">
+            <div class="date-day">Fri</div>
+            <div class="date-number">11</div>
+            <div class="date-month">April</div>
+          </div>
+          <div class="date-item">
+            <div class="date-day">Sat</div>
+            <div class="date-number">12</div>
+            <div class="date-month">April</div>
+          </div>
+          <div class="date-item">
+            <div class="date-day">Sun</div>
+            <div class="date-number">13</div>
+            <div class="date-month">April</div>
+          </div>
+        </div>
+        <div class="time-selector">
+          <div class="time-item">10:30 AM</div>
+          <div class="time-item">1:00 PM</div>
+          <div class="time-item">3:30 PM</div>
+          <div class="time-item">6:00 PM</div>
+          <div class="time-item">8:30 PM</div>
+          <div class="time-item">11:00 PM</div>
+        </div>
+      </section>
+      <section class="seat-selection">
+        <h2>Select Your Seats</h2>
+        <div class="screen-container">
+          <div class="screen"></div>
+          <div class="screen-label">SCREEN</div>
+        </div>      
+        <div class="seat-map">
+          <div class="seat-row">
+            <div class="seat-label">A</div>
+            <div class="seat available" data-seat-id="A1"></div>
+            <div class="seat available" data-seat-id="A2"></div>
+            <div class="seat available" data-seat-id="A3"></div>
+            <div class="seat available" data-seat-id="A4"></div>
+            <div class="seat unavailable" data-seat-id="A5"></div>
+            <div class="seat unavailable" data-seat-id="A6"></div>
+            <div class="seat available" data-seat-id="A7"></div>
+            <div class="seat available" data-seat-id="A8"></div>
+            <div class="seat available" data-seat-id="A9"></div>
+            <div class="seat available" data-seat-id="A10"></div>
+            <div class="seat available" data-seat-id="A11"></div>
+            <div class="seat available" data-seat-id="A12"></div>
+            <div class="seat-label">A</div>
+          </div>
+          <div class="seat-row">
+            <div class="seat-label">B</div>
+            <div class="seat available" data-seat-id="B1"></div>
+            <div class="seat available" data-seat-id="B2"></div>
+            <div class="seat unavailable" data-seat-id="B3"></div>
+            <div class="seat available" data-seat-id="B4"></div>
+            <div class="seat available" data-seat-id="B5"></div>
+            <div class="seat available" data-seat-id="B6"></div>
+            <div class="seat available" data-seat-id="B7"></div>
+            <div class="seat available" data-seat-id="B8"></div>
+            <div class="seat unavailable" data-seat-id="B9"></div>
+            <div class="seat available" data-seat-id="B10"></div>
+            <div class="seat available" data-seat-id="B11"></div>
+            <div class="seat available" data-seat-id="B12"></div>
+            <div class="seat-label">B</div>
+          </div>
+          <div class="seat-row">
+            <div class="seat-label">C</div>
+            <div class="seat available" data-seat-id="C1"></div>
+            <div class="seat available" data-seat-id="C2"></div>
+            <div class="seat available" data-seat-id="C3"></div>
+            <div class="seat available" data-seat-id="C4"></div>
+            <div class="seat available" data-seat-id="C5"></div>
+            <div class="seat available" data-seat-id="C6"></div>
+            <div class="seat available" data-seat-id="C7"></div>
+            <div class="seat available" data-seat-id="C8"></div>
+            <div class="seat available" data-seat-id="C9"></div>
+            <div class="seat available" data-seat-id="C10"></div>
+            <div class="seat available" data-seat-id="C11"></div>
+            <div class="seat available" data-seat-id="C12"></div>
+            <div class="seat-label">C</div>
+          </div>
+          <div class="seat-row">
+            <div class="seat-label">D</div>
+            <div class="seat available" data-seat-id="D1"></div>
+            <div class="seat available" data-seat-id="D2"></div>
+            <div class="seat available" data-seat-id="D3"></div>
+            <div class="seat available" data-seat-id="D4"></div>
+            <div class="seat unavailable" data-seat-id="D5"></div>
+            <div class="seat unavailable" data-seat-id="D6"></div>
+            <div class="seat unavailable" data-seat-id="D7"></div>
+            <div class="seat available" data-seat-id="D8"></div>
+            <div class="seat available" data-seat-id="D9"></div>
+            <div class="seat available" data-seat-id="D10"></div>
+            <div class="seat available" data-seat-id="D11"></div>
+            <div class="seat available" data-seat-id="D12"></div>
+            <div class="seat-label">D</div>
+          </div>
+          <div class="seat-row">
+            <div class="seat-label">E</div>
+            <div class="seat available" data-seat-id="E1"></div>
+            <div class="seat available" data-seat-id="E2"></div>
+            <div class="seat available" data-seat-id="E3"></div>
+            <div class="seat available" data-seat-id="E4"></div>
+            <div class="seat available" data-seat-id="E5"></div>
+            <div class="seat available" data-seat-id="E6"></div>
+            <div class="seat available" data-seat-id="E7"></div>
+            <div class="seat available" data-seat-id="E8"></div>
+            <div class="seat available" data-seat-id="E9"></div>
+            <div class="seat available" data-seat-id="E10"></div>
+            <div class="seat available" data-seat-id="E11"></div>
+            <div class="seat available" data-seat-id="E12"></div>
+            <div class="seat-label">E</div>
+          </div>          
+          <div class="seat-row">
+            <div class="seat-label">F</div>
+            <div class="seat available" data-seat-id="F1"></div>
+            <div class="seat available" data-seat-id="F2"></div>
+            <div class="seat unavailable" data-seat-id="F3"></div>
+            <div class="seat unavailable" data-seat-id="F4"></div>
+            <div class="seat available" data-seat-id="F5"></div>
+            <div class="seat available" data-seat-id="F6"></div>
+            <div class="seat available" data-seat-id="F7"></div>
+            <div class="seat available" data-seat-id="F8"></div>
+            <div class="seat unavailable" data-seat-id="F9"></div>
+            <div class="seat available" data-seat-id="F10"></div>
+            <div class="seat available" data-seat-id="F11"></div>
+            <div class="seat available" data-seat-id="F12"></div>
+            <div class="seat-label">F</div>
+          </div>
+          <div class="seat-row">
+            <div class="seat-label">G</div>
+            <div class="seat available" data-seat-id="G1"></div>
+            <div class="seat available" data-seat-id="G2"></div>
+            <div class="seat available" data-seat-id="G3"></div>
+            <div class="seat available" data-seat-id="G4"></div>
+            <div class="seat unavailable" data-seat-id="G5"></div>
+            <div class="seat unavailable" data-seat-id="G6"></div>
+            <div class="seat available" data-seat-id="G7"></div>
+            <div class="seat available" data-seat-id="G8"></div>
+            <div class="seat available" data-seat-id="G9"></div>
+            <div class="seat available" data-seat-id="G10"></div>
+            <div class="seat available" data-seat-id="G11"></div>
+            <div class="seat available" data-seat-id="G12"></div>
+            <div class="seat-label">G</div>
+          </div>
+          <div class="seat-row">
+            <div class="seat-label">H</div>
+            <div class="seat available" data-seat-id="H1"></div>
+            <div class="seat available" data-seat-id="H2"></div>
+            <div class="seat available" data-seat-id="H3"></div>
+            <div class="seat available" data-seat-id="H4"></div>
+            <div class="seat available" data-seat-id="H5"></div>
+            <div class="seat available" data-seat-id="H6"></div>
+            <div class="seat available" data-seat-id="H7"></div>
+            <div class="seat available" data-seat-id="H8"></div>
+            <div class="seat unavailable" data-seat-id="H9"></div>
+            <div class="seat available" data-seat-id="H10"></div>
+            <div class="seat available" data-seat-id="H11"></div>
+            <div class="seat available" data-seat-id="H12"></div>
+            <div class="seat-label">H</div>
+          </div>
+        </div>
+        <div class="seat-legend">
+          <div class="legend-item">
+            <div class="seat mini available"></div>
+            <span>Available</span>
+          </div>
+          <div class="legend-item">
+            <div class="seat mini selected"></div>
+            <span>Selected</span>
+          </div>
+          <div class="legend-item">
+            <div class="seat mini unavailable"></div>
+            <span>Unavailable</span>
+          </div>
+        </div>
+        <div class="selected-seats text-center mt-6"></div>
+      </section>
+      <section class="summary-section">
+        <div class="order-summary">
+          <h2>Summary</h2>
+          <div class="summary-details">
+            <div class="summary-row">
+              <span>Movie</span>
+              <span class="selected-movie">Interstellar</span>
+            </div>
+            <div class="summary-row">
+              <span>Date</span>
+              <span class="selected-date">Monday, April 7</span>
+            </div>
+            <div class="summary-row">
+              <span>Show time</span>
+              <span class="selected-time">8:30 PM</span>
+            </div>
+            <div class="summary-row">
+              <span>Theater</span>
+              <span>Number 1</span>
+            </div>
+            <hr>
+            <div class="summary-row regular-tickets">
+              <span>Ticket x 0</span>
+              <span class="regular-total">0.00 DT</span>
+            </div>
+            <hr>
+            <div class="summary-row total">
+              <span>Total Amount</span>
+              <span class="total-amount">0.00 DT</span>
+            </div>
+          </div>
+          <button class="payment-button btn-primary full-width disabled" disabled>
+            Proceed to Payment
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-copyright">
+          <p>&copy; 2025 FourCinema. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script src="movieSelection.js"></script>
+    <script src="seatSelection.js"></script>
+    <script src="dateTimeSelection.js"></script>
+  </body>
+</html>
