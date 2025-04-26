@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       description: "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.",
       director: "Christopher Nolan",
       cast: "Matthew McConaughey, Anne Hathaway, Jessica Chastain, Bill Irwin",
-      posterUrl: "assets/inter.jpg"
+      posterUrl: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
     },
     "The Dark Knight": {
       title: "The Dark Knight",
