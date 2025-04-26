@@ -24,16 +24,16 @@
             <h1 class="title">Sign Up</h1>
             <form action="signup.php" method="POST">
                 <div class="form-group">
-                    <label for="username">Full Name</label>
+                    <label for="name">Full Name</label>
                     <input type="text" id="username" name="username" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="number">Telephone Number</label>
-                    <input type="number" id="number" required>
+                    <input type="number" id="number" name="number" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
@@ -43,7 +43,7 @@
                     <label for="confirm-password">Confirm Password</label>
                     <input type="password" id="confirm-password" required>
                 </div>
-                <input type="submit" value="Sign Up">
+                <button type="submit" onclick="signup()">Signup</button>
             </form>
             <div class="links">
                 <a href="signin.html">Already have an account? Sign in</a>
@@ -62,5 +62,6 @@
           </div>
         </div>
       </footer>
+      <script src="signup.js"></script>
 </body>
 </html> 

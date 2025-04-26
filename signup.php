@@ -1,20 +1,35 @@
 <?php
-session_start();
-require 'db.php';
+require_once 'config.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $username = $mysqli->real_escape_string($_POST['username']);
-  $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $phone = $_POST['number'];
 
-  // Check if user exists
-  $result = $mysqli->query("SELECT id FROM users WHERE username='$username'");
-  if ($result->num_rows > 0) {
-    die("Username already taken. <a href='signup.html'>Try again</a>");
-  }
+    // Check if email already exists
+    $check_email = "SELECT * FROM users WHERE email = ?";
+    $stmt = $conn->prepare($check_email);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-  $mysqli->query("INSERT INTO users (username, password) VALUES ('$username','$password')");
-  $_SESSION['user_id'] = $mysqli->insert_id;
-  header("Location: index.html");
-  exit;
+    if ($result->num_rows > 0) {
+        echo "Email already exists!";
+    } else {
+        // Insert new user
+        $sql = "INSERT INTO users (username, email, password, phone) VALUES (?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssss", $username, $email, $password, $phone);
+        
+        if ($stmt->execute()) {
+            header("Location: signin.html");
+            exit();
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+    $stmt->close();
 }
-?>
+$conn->close();
+?> 
