@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     seat.addEventListener('click', () => {
       seat.classList.toggle('selected');
       
-
       const selectedSeats = document.querySelectorAll('.seat.selected');
       const selectedRegularSeats = document.querySelectorAll('.seat.available.selected');
       
@@ -43,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ? `${total.toFixed(2)} DT`
         : '0.00 DT';
     }
-    
     const paymentButton = document.querySelector('.payment-button');
     if (paymentButton) {
       if (!isLoggedIn) {

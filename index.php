@@ -2,7 +2,6 @@
 session_start();
 require_once 'config.php';
 
-// Check if user is logged in
 $isLoggedIn = isset($_SESSION['user_id']);
 
 function getAllMovies() {
@@ -22,7 +21,7 @@ $movieId = null;
 $selectedDate = null;
 $selectedTime = null;
 
-// Only process GET parameters if they exist
+
 if (isset($_GET['movie_id'])) {
     $movieId = $_GET['movie_id'];
     foreach ($movies as $movie) {
@@ -162,11 +161,9 @@ if (isset($_GET['selected_time'])) {
             $stmt->bind_param("s", $movieId);
             $stmt->execute();
             $result = $stmt->get_result();
-
             if ($result && $row = $result->fetch_assoc()) {
                 $timesString = str_replace(["\r", "\n"], '', $row['times']);
                 $timesArray = explode(',', $timesString);
-
                 foreach ($timesArray as $timeItem) {
                     $timeItem = trim($timeItem);
                     if (!empty($timeItem)) {
@@ -187,7 +184,6 @@ if (isset($_GET['selected_time'])) {
           <?php if ($selectedTime): ?>
             <div class="seat-map">
               <?php
-              // Step 1: Get all reserved seats for this movie, date, and time
               $sql = "SELECT seat_number FROM reservations WHERE movie_id = ? AND date = ? AND time = ?";
               $stmt = $conn->prepare($sql);
               $stmt->bind_param("sss", $movieId, $selectedDate, $selectedTime);
@@ -197,28 +193,21 @@ if (isset($_GET['selected_time'])) {
               $reservedSeats = [];
               if ($result) {
                 while ($row = $result->fetch_assoc()) {
-                  // Split the comma-separated seat numbers and merge into the array
+
                   $seats = array_map('trim', explode(',', $row['seat_number']));
                   $reservedSeats = array_merge($reservedSeats, $seats);
                 }
               }
-
-              // Step 2: Define the seat map rows
-              $rows = range('A', 'H'); // A to H
-              $seatsPerRow = 12; // 12 seats in each row
-
-              // Step 3: Build the seat map
+              $rows = range('A', 'H'); 
+              $seatsPerRow = 12; 
               foreach ($rows as $rowLetter) {
                 echo '<div class="seat-row">';
                 echo '<div class="seat-label">' . $rowLetter . '</div>';
-
                 for ($seatNumber = 1; $seatNumber <= $seatsPerRow; $seatNumber++) {
                   $seatId = $rowLetter . $seatNumber;
                   $seatClass = in_array($seatId, $reservedSeats) ? 'unavailable' : 'available';
-
                   echo '<div class="seat ' . $seatClass . '" data-seat-id="' . $seatId . '"></div>';
                 }
-
                 echo '<div class="seat-label">' . $rowLetter . '</div>';
                 echo '</div>';
               }

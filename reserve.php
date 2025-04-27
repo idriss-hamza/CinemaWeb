@@ -3,7 +3,7 @@ session_start();
 require_once 'config.php';
 
 if (!isset($_SESSION['user_id'])) {
-    // Not logged in, redirect to sign in
+
     header('Location: signin.html');
     exit();
 }
@@ -15,10 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $time = isset($_POST['time']) ? $_POST['time'] : null;
     $seat_number = isset($_POST['seat_number']) ? $_POST['seat_number'] : null;
     $created_at = date('Y-m-d H:i:s');
-
-    // Validate required fields
+    
     if ($movie_id && $date && $time && $seat_number) {
-        // Check if any of the selected seats are already reserved
         $sql = "SELECT seat_number FROM reservations WHERE movie_id = ? AND date = ? AND time = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sss", $movie_id, $date, $time);
@@ -34,17 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $selectedSeats = array_map('trim', explode(',', $seat_number));
         $conflicts = array_intersect($selectedSeats, $reservedSeats);
         if (count($conflicts) > 0) {
-            // Some seats are already reserved
             echo "<script>alert('Some selected seats are already reserved: " . implode(', ', $conflicts) . ". Please choose different seats.'); window.history.back();</script>";
             exit();
         }
-
-        // Insert reservation
         $sql = "INSERT INTO reservations (movie_id, time, date, seat_number, user_id, created_at) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssssss", $movie_id, $time, $date, $seat_number, $user_id, $created_at);
         if ($stmt->execute()) {
-            // Success
             echo "<script>alert('Reservation successful!'); window.location.href='index.php';</script>";
             exit();
         } else {
@@ -56,7 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 } else {
-    // Not a POST request
     header('Location: index.php');
     exit();
 }
